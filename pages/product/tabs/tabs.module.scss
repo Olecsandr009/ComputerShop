@@ -1,0 +1,30 @@
+.tabs {
+	.tabsList {
+		@apply flex items-center gap-8 border-b-2 border-solid border-[#F9F9F9] px-3 pb-2 mb-[24px];
+
+		.tabsItem {
+			@apply relative flex items-end gap-1 px-1;
+
+			&::after {
+				content: '';
+				@apply absolute -bottom-[10px] left-0 right-0 h-[2px] w-full;
+				border-radius: 15px;
+			}
+
+			.tabsBtn {
+				@apply font-semibold;
+			}
+			.tabsItemValue {
+				@apply text-[#08A045];
+			}
+		}
+
+		.tabsActive {
+			@apply text-[#08A045];
+
+			&::after {
+				@apply bg-[#08A045];
+			}
+		}
+	}
+}

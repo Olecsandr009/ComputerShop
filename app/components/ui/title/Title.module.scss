@@ -1,0 +1,8 @@
+.title {
+	@apply relative mb-2 text-[17px] font-bold text-gray-800;
+
+	&::after {
+		@apply absolute -left-4 h-full w-full border-l-2 border-green-500;
+		content: '';
+	}
+}

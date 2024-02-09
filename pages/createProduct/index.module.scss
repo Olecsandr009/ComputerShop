@@ -1,0 +1,7 @@
+.createProduct {
+	@apply flex justify-center;
+
+	& .createProductForm {
+		@apply my-[60px] w-[70%];
+	}
+}

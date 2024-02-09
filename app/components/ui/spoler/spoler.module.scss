@@ -1,0 +1,39 @@
+.spoler {
+	@apply w-full;
+
+	.spolerBlock {
+		@apply border-t-2 border-b-2 border-solid border-[#E5E5E5];
+
+		.spolerTitle {
+			@apply flex cursor-pointer items-center justify-between gap-8 pt-4 pl-2 pr-4 pb-4 font-semibold text-[#2F2F2F];
+
+			.spolerTitleText {
+				.spolerSpan {
+					@apply text-[#5D5E60];
+					text-decoration: underline;
+				}
+			}
+			.spolerTitleIcon {
+			}
+		}
+		.spolerContent {
+			.spolerCols {
+				@apply grid grid-cols-3 pb-5 pl-8;
+				row-gap: 16px;
+
+				.spolerText {
+					@apply text-sm text-[#2F2F2F];
+				}
+				.spolerTextCenter {
+					@apply text-right text-sm text-[#2F2F2F];
+				}
+				.spolerFree {
+					@apply text-right text-sm font-semibold text-[#08A045];
+				}
+				.spolerPrice {
+					@apply text-right text-sm font-semibold text-[#2F2F2F];
+				}
+			}
+		}
+	}
+}

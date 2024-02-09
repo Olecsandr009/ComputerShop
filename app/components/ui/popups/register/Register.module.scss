@@ -1,0 +1,21 @@
+.register {
+	& .btnClose {
+		@apply w-full text-gray-700 underline hover:no-underline;
+	}
+
+	& .shadow {
+		@apply pointer-events-none absolute top-0 left-0 z-40 h-full w-full bg-[rgba(47,47,47,0.5)] opacity-0 backdrop-blur-[2.5px] transition-all;
+
+		&.active {
+			@apply pointer-events-auto opacity-100;
+		}
+	}
+
+	& .popup {
+		@apply pointer-events-none absolute top-1/2 left-1/2 z-50 w-full -translate-x-1/2 -translate-y-full bg-white p-8 opacity-0 transition-all;
+
+		&.active {
+			@apply pointer-events-auto -translate-y-1/2 opacity-100;
+		}
+	}
+}

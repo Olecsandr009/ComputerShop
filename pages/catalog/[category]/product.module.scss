@@ -1,0 +1,111 @@
+.productContainer {
+	@apply flex gap-8;
+
+	.productBody {
+		@apply w-full flex flex-col gap-8;
+		flex: 0 1 100%;
+
+		.productTop {
+			@apply bg-white py-5 px-4;
+			box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
+			.productTopTitle {
+				@apply flex justify-between gap-7;
+
+				.productTopTitleText {
+					@apply text-[#2F2F2F] text-3xl font-semibold;
+				}
+
+				.productSort {
+					@apply flex gap-3 items-center;
+
+					.productSortText {
+						@apply text-[#2F2F2F] text-sm font-semibold;
+					}
+
+					.productSortSelect {
+						@apply border-[2px] border-solid border-[#F9F9F9] bg-transparent text-[#2F2F2F] text-sm py-3 px-4 relative;
+
+						&::after {
+							@apply absolute top-0 right-0 w-3 h-3 border border-solid border-black;
+							content: "";
+						}
+					}
+				}
+			}
+
+			.productCatalogLength {
+				@apply font-semibold text-[#5D5E60] flex gap-2;
+				.productCatalogSpan {
+					@apply text-[#2F2F2F];
+				}
+			}
+		}
+
+		.products {
+			.productsList {
+				// @apply grid grid-cols-4;
+				@apply flex flex-wrap;
+				row-gap: 30px;
+				column-gap: 12px;
+
+				.productsItem {
+					@apply py-5 px-3;
+					box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+					div {
+						.productsItemImage {
+							@apply w-[280px] h-[280px] flex items-center justify-center mb-11;
+
+							img {
+								@apply max-w-full max-h-full w-full;
+							}
+						}
+
+						.productsItemContent {
+							.productsItemName {
+								@apply text-[#2F2F2F] text-sm font-semibold mb-[21px] block;
+							}
+
+							.productsItemRating {
+								@apply flex items-center justify-between pb-1 mb-6 border-b border-solid border-[#E5E5E5];
+
+								.productsItemArticle {
+									@apply text-xs text-[#5D5E60];
+								}
+							}
+
+							.productsItemBottom {
+								@apply flex items-center justify-between gap-8;
+								.productsItemPriceWrapper {
+									@apply flex flex-col justify-center items-start;
+
+									.productsItemDiscount {
+										@apply text-[#BBB] relative;
+
+										&::after {
+											content: "";
+											@apply absolute top-1/2 w-full h-[2px] bg-red-500 -translate-y-1/2 left-0;
+										}
+									}
+
+									.productsItemPrice {
+										@apply text-[#2F2F2F] text-2xl font-semibold;
+									}
+								}
+
+								.productsItemPriceSend {
+									@apply px-3 py-4;
+									border-radius: 8px;
+
+									svg {
+										@apply text-4xl;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

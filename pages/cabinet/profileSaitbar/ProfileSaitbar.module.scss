@@ -1,0 +1,64 @@
+.saitbar {
+	@apply shadow-[0px_0px_20px_rgba(0,0,0,0.1)] max-w-[325px] w-full;
+
+	.mainSaitbar {
+		@apply flex flex-col pt-6;
+
+		.saitbarUserData {
+			@apply flex flex-col items-center px-8;
+			.saitbarUserAva {
+				@apply flex h-[110px] w-[110px] items-center justify-center overflow-hidden;
+				border-radius: 100px;
+
+				.saitbarImage {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.saitbarName {
+				@apply mb-3 text-center text-lg font-bold;
+			}
+		}
+
+		.saitbarUserList {
+			@apply flex flex-col;
+
+			.saitbarUserItem {
+				.saitbarItemLink {
+					@apply flex justify-between px-5 py-2 text-gray-800 hover:text-green-600 hover:shadow-[0px_0px_9px_rgba(0,0,0,0.18)];
+
+					&.active {
+						@apply text-green-600 shadow-[0px_0px_9px_rgba(0,0,0,0.18)];
+					}
+
+					.saitbarLinkCount {
+						@apply bg-green-600 px-1 py-[2px] text-white;
+						border-radius: 50px;
+
+						&.bonus {
+							@apply bg-yellow-500;
+						}
+					}
+				}
+			}
+		}
+
+		.saitbarUserBottom {
+			@apply mx-5 mt-2 flex justify-between border-t-2
+			 border-gray-300 py-3;
+
+			.saitbarLogout {
+				@apply flex gap-1;
+
+				.saitbarLogoutText {
+					@apply text-[14px] text-gray-800;
+				}
+			}
+
+			.saitbarPassword {
+				@apply text-[14px] text-gray-600 underline
+				 hover:no-underline;
+			}
+		}
+	}
+}

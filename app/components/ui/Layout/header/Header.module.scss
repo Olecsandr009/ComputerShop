@@ -1,0 +1,230 @@
+.header {
+	@apply relative z-10;
+
+	.headerTop {
+		@apply bg-header-bg bg-cover bg-center bg-no-repeat;
+
+		.headerTopContent {
+			@apply flex items-center justify-between gap-1;
+
+			.headerTopText {
+				@apply flex items-center text-xs font-semibold;
+
+				.headerTopTextLink {
+					@apply flex items-center p-2 text-sm font-normal text-gray-700;
+				}
+			}
+
+			.headerTopLanguage {
+				@apply flex items-center gap-2 px-1 text-base font-normal text-gray-500;
+
+				.headerTopLanguageBtn {
+					@apply border-b-2 border-transparent;
+
+					&.active {
+						@apply border-b-2 border-black text-black;
+					}
+				}
+			}
+		}
+	}
+
+	.headerCenter {
+		@apply relative z-20 bg-white py-4;
+
+		.headerCenterContent {
+			@apply flex items-center gap-3;
+
+			& a img {
+				max-width: 50px;
+				max-height: 50px;
+				width: 100%;
+			}
+
+			.headerContentCenter {
+				@apply ml-auto flex w-1/2 items-center gap-8;
+
+				.headerCenterPhone {
+					@apply relative flex-shrink-0 bg-transparent pl-[15px] pr-[8px] pb-[4px] pt-2 transition-colors transition-shadow;
+
+					&:hover {
+						@apply bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)];
+
+						.headerCenterPhoneText {
+							svg {
+								@apply rotate-180 transition-transform;
+							}
+						}
+
+						.headerCenterPhoneMenu {
+							@apply pointer-events-auto opacity-100;
+						}
+					}
+
+					.headerCenterPhoneText {
+						@apply flex flex-shrink-0 items-center whitespace-nowrap font-semibold text-black transition-colors hover:text-green-600;
+					}
+
+					.headerCenterPhoneMenu {
+						@apply pointer-events-none  absolute top-full left-0 z-10 flex flex-col gap-1 bg-white pl-[15px] pr-[23px] pb-5 opacity-0 shadow-[0px_20px_20px_rgba(0,0,0,0.1)] transition-opacity;
+
+						.headerCenterPhoneOrder {
+							@apply flex flex-col items-center;
+
+							.headerOrderTitle {
+								@apply text-center text-base text-gray-600;
+							}
+
+							.headerOrderTime {
+								@apply text-center text-xs text-gray-600;
+							}
+						}
+
+						.headerOrderOr {
+							@apply flex items-center justify-between gap-[15px];
+
+							.headerOrderSpan {
+								@apply mt-1 h-[1px] w-full bg-gray-400;
+							}
+
+							.headerOrderText {
+								@apply text-xs text-gray-600;
+							}
+						}
+					}
+				}
+
+				.headerSearch {
+					@apply flex w-full;
+
+					.headerSearchInput {
+						@apply w-full border border-green-600 px-3 focus:outline-none;
+					}
+				}
+			}
+
+			.headerContentRight {
+				@apply flex items-center;
+			}
+		}
+	}
+
+	.headerBottom {
+		@apply mb-5 border-y border-gray-100 bg-white shadow-[0px_0px_20px_rgba(11,21,13,0.08)];
+
+		&::after {
+			@apply pointer-events-none absolute top-0 left-0 -z-[1] h-[100vh] w-[100vw] bg-[rgba(47,47,47,0.5)] opacity-0 transition-opacity;
+			content: '';
+		}
+
+		&.active {
+			&::after {
+				@apply pointer-events-auto opacity-100;
+			}
+		}
+
+		.headerCatalog {
+			@apply relative w-[300px];
+
+			.headerCatalogMenu {
+				@apply pointer-events-none absolute w-full origin-top scale-y-0 bg-white py-5 shadow-[0px_0px_9px_rgba(0,0,0,0.18)] transition-transform;
+
+				&.active {
+					@apply pointer-events-auto scale-y-100;
+
+					.headerCatalogList {
+						@apply opacity-100;
+					}
+				}
+
+				.headerCatalogData {
+					@apply pointer-events-none absolute left-full top-0 z-30 grid h-auto max-h-[95vh] min-h-full w-auto  w-[50vw] translate-x-[0.8px] translate-y-[2px] grid-cols-3 gap-16 overflow-hidden bg-white p-8 opacity-0 transition-opacity;
+
+					&.active {
+						@apply pointer-events-auto opacity-100;
+					}
+
+					.headerCatalogDataBlock {
+						.headerCatalogDataTitle {
+							@apply mb-3 inline-block whitespace-nowrap font-semibold text-black hover:text-green-600;
+
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+
+						.headerCatalogBrands {
+							@apply flex flex-col gap-2;
+
+							.headerCatalogBrandItem {
+								.headerCatalogBrandLink {
+									@apply inline-block w-full max-w-[250px] overflow-hidden whitespace-nowrap hover:underline;
+									text-overflow: ellipsis;
+								}
+							}
+						}
+					}
+				}
+
+				.headerCatalogList {
+					@apply relative flex flex-col gap-1 opacity-0  transition-opacity  duration-500;
+
+					.headerCatalogItem {
+						@apply relative z-10 mr-[2px] translate-x-[0.8px]  bg-white py-[10px] hover:mr-0 hover:bg-white hover:shadow-[0px_0px_9px_rgba(0,0,0,0.18)];
+
+						&.active {
+							@apply mr-0 bg-white shadow-[0px_0px_9px_rgba(0,0,0,0.18)];
+						}
+
+						.headerCatalogLink {
+							@apply flex cursor-pointer items-center px-5 text-sm font-semibold;
+						}
+					}
+				}
+			}
+		}
+
+		.headerNavigation {
+			@apply mx-auto;
+
+			.headerNavigationList {
+				@apply flex items-center gap-7;
+
+				.headerNavigationItem {
+					@apply hover:text-green-500;
+					.headerNavigationLink {
+						@apply relative flex cursor-pointer items-center;
+
+						&:hover {
+							.headerNavigationMenu {
+								@apply pointer-events-auto opacity-100;
+							}
+						}
+
+						.headerNavigationMenu {
+							@apply pointer-events-none absolute top-full left-1/2 z-10 w-48 -translate-x-1/2 bg-white py-2 opacity-0 shadow-[0px_13px_20px_rgba(0,0,0,0.04)];
+
+							.headerNavigationMenuList {
+								@apply flex flex-col;
+
+								.headerNavigationMenuItem {
+									@apply hover:bg-gray-100;
+
+									.headerNavigationMenuLink {
+										@apply inline-block px-5 py-1 text-sm text-black;
+									}
+								}
+							}
+						}
+					}
+
+					&:last-child {
+						.headerNavigationLink {
+							@apply text-red-600;
+						}
+					}
+				}
+			}
+		}
+	}
+}

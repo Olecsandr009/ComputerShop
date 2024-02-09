@@ -1,0 +1,116 @@
+.searchForm {
+	@apply flex w-full;
+
+	.searchLabel {
+		@apply relative flex w-full;
+
+		.searchInput {
+			@apply w-full border px-3 focus:outline-none;
+		}
+
+		.searchModal {
+			@apply pointer-events-none absolute top-full left-0 w-full bg-white pb-4 opacity-0 transition-opacity;
+			box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+			z-index: 100;
+
+			&.active {
+				@apply pointer-events-auto opacity-100;
+			}
+
+			.searchHistory {
+				@apply flex flex-col;
+
+				.searchHistoryText {
+					@apply mb-3 px-4 pt-5 text-sm text-[#BBB];
+				}
+
+				.searchHistoryList {
+					@apply block h-full max-h-[50vh] overflow-auto border-b border-solid border-[#E5E5E5] pb-3;
+
+					.searchHistoryItem {
+						@apply flex items-center justify-between transition-all hover:bg-[#F9F9F9];
+
+						&:hover {
+							.searchHistoryDelete {
+								@apply opacity-100;
+							}
+						}
+
+						.searchHistoryItemLink {
+							@apply flex w-full items-center gap-3 py-3 pl-4  text-sm text-[#5D5E60];
+
+							.searchHistoryIcon {
+								@apply text-[#BBBBBB];
+							}
+						}
+						.searchHistoryDelete {
+							@apply px-3 py-3  text-[#E5E5E5] opacity-0 transition-opacity;
+						}
+					}
+
+					// Search result
+					.searchResultItem {
+						.searchResultLink {
+							@apply flex w-full items-center justify-between gap-3 py-3  px-4 text-sm text-[#5D5E60] transition-all hover:bg-[#F9F9F9];
+						}
+					}
+
+					.searchResultItemProduct {
+						.searchResultLinkProduct {
+							@apply flex gap-3 py-[6px] pl-4 transition-all;
+							.searchResultMedia {
+								.searchResultImage {
+									width: 70px;
+									height: 70px;
+								}
+							}
+
+							&:hover .searchResultProductData .searchResultProductName {
+								text-decoration: underline;
+							}
+
+							.searchResultProductData {
+								.searchResultProductName {
+									@apply pb-2 text-sm text-[#5D5E60];
+								}
+								.searchResultProductDiscount {
+									@apply relative inline-block text-xs text-[#BBBBBB];
+
+									&::before {
+										content: '';
+										@apply absolute left-0 top-1/2 h-[1px] w-full bg-[#F14444];
+									}
+								}
+								.searchResultProductPrice {
+									@apply text-sm font-semibold text-[#2F2F2F];
+								}
+							}
+						}
+					}
+				}
+
+				.searchHistoryLinkB {
+					@apply mt-4 ml-4 flex items-center gap-1 self-start text-sm text-[#5D5E60];
+					text-decoration: underline;
+
+					& .arrow {
+						@apply pt-[4px];
+					}
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+.searchHistoryShadow {
+	@apply pointer-events-none absolute left-0 top-full h-[100vh] w-full opacity-0 transition-opacity;
+	background: rgba(47, 47, 47, 0.5);
+	backdrop-filter: blur(2.5px);
+
+	&.active {
+		@apply pointer-events-auto opacity-100;
+	}
+}

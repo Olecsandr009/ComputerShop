@@ -1,0 +1,115 @@
+.basket {
+	@apply relative;
+
+	.basketButton {
+		@apply mr-2 block flex h-9 w-9 items-center justify-center;
+
+		&:hover ~ .basketModal {
+			@apply pointer-events-auto opacity-100;
+			visibility: visible;
+		}
+	}
+
+	.basketModal {
+		@apply pointer-events-none absolute right-0 mt-5 min-w-[350px] bg-white p-5 pb-0 opacity-0 shadow-[0px_0px_20px_rgba(11,21,13,0.08)] transition-opacity;
+		visibility: hidden;
+
+		&::after {
+			@apply absolute -top-[10px] right-6 h-5 w-5 rotate-45 bg-white;
+			content: '';
+		}
+
+		.basketTitle {
+			@apply mb-2 font-semibold text-[#2F2F2F];
+
+			span {
+				@apply font-normal text-[#BBB];
+			}
+		}
+
+		.basketList {
+			@apply mb-5;
+
+			.basketItem {
+				@apply flex cursor-pointer items-center gap-2 border-b border-solid border-[#E5E5E5] py-3;
+
+				.basketDel {
+					@apply text-[#E5E5E5] transition-colors hover:text-red-600;
+					flex: 0 0 auto;
+				}
+				.basketMedia {
+					@apply relative h-[70px] w-[70px];
+					flex: 0 0 auto;
+					span {
+						img {
+							@apply max-h-full w-full max-w-full object-contain;
+						}
+					}
+				}
+				.basketContent {
+					width: 100%;
+
+					.basketName {
+						@apply pb-2 text-sm font-semibold text-[#5D5E60];
+					}
+
+					.basketData {
+						@apply flex items-end justify-between gap-4;
+
+						.basketPrice {
+							flex: 0 1 auto;
+
+							.basketDiscount {
+								@apply relative inline-block text-xs text-[#BBBBBB];
+
+								&::after {
+									@apply absolute top-1/2 left-0 h-[1px] w-full -translate-y-1/2 bg-red-600;
+									content: '';
+								}
+							}
+
+							.basketValue {
+								@apply text-sm font-semibold text-[#5D5E60];
+							}
+						}
+
+						.basketQuantity {
+							@apply ml-auto flex items-center;
+
+							.basketReduce {
+								@apply flex h-5 w-5 cursor-pointer items-center justify-center text-xs text-[#2F2F2F];
+							}
+							.basketInput {
+								@apply block w-8 border border-solid border-[#E5E5E5] text-center text-xs text-[#2F2F2F];
+							}
+							.basketIncrease {
+								@apply flex h-5 w-5 cursor-pointer items-center justify-center text-xs text-[#2F2F2F];
+							}
+						}
+
+						.basketValue {
+							@apply text-sm font-semibold text-[#2F2F2F];
+							flex: 0 0 auto;
+						}
+					}
+				}
+			}
+		}
+
+		.basketAllPrice {
+			@apply mb-5 flex items-center justify-between gap-8;
+
+			.basketText {
+				@apply text-sm font-semibold text-[#2F2F2F];
+			}
+
+			.basketValue {
+				@apply text-xl font-semibold text-[#2F2F2F];
+			}
+		}
+
+		.basketLink {
+			@apply block flex h-[50px] flex-col items-center justify-center text-center text-gray-500 hover:underline;
+		}
+	}
+}

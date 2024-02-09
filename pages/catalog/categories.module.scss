@@ -1,0 +1,40 @@
+.categoryTitle {
+	@apply mb-8 text-3xl font-semibold capitalize;
+}
+
+.categoryBlocks {
+	@apply mb-20 grid grid-cols-4 gap-8;
+
+	.categoryBlock {
+		@apply bg-white transition-shadow;
+		box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
+		&:hover {
+			box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+		}
+
+		.categoryBlockMedia {
+			@apply relative max-h-80 overflow-hidden border-b border-solid border-[#2F2F2F];
+			.categoryBlockImage {
+			}
+			.categoryBlockSubCategory {
+				@apply absolute bottom-0 w-full pb-2 text-center font-semibold uppercase text-[red]; /*#2F2F2F*/
+			}
+		}
+		.categoryBlockNames {
+			@apply flex flex-col p-5 pb-0;
+			.categoryBlockName {
+				.categoryBlockLink {
+					@apply py-2 text-sm font-semibold uppercase text-[#5D5E60] hover:underline;
+				}
+			}
+		}
+		.categoryBlockButton {
+			@apply mb-4 flex w-full items-center justify-center text-center text-[#5D5E60] hover:underline;
+
+			svg {
+				@apply text-sm text-[#5D5E60];
+			}
+		}
+	}
+}

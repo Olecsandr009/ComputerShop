@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\assets",
+    "\\app\\assets\\providers",
+    "\\app\\assets\\providers\\auth",
+    "\\app\\assets\\providers\\theme",
+    "\\pages",
+    "\\pages\\product",
+    "\\pages\\product\\tabs",
+    "\\pages\\product\\tabs\\tabWindows"
+  ],
+  "SelectedNode": "\\app\\assets\\providers\\auth\\AuthProvider.tsx",
+  "PreviewInSolutionExplorer": false
+}

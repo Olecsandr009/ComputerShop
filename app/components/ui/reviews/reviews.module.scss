@@ -1,0 +1,31 @@
+.reviewsSection {
+	@apply mb-5 flex items-center;
+
+	.reviewsBody {
+		@apply relative border-r-2 border-solid border-[#E5E5E5] pr-3 text-[#e5e5e5];
+
+		&::before {
+			content: '★★★★★';
+			display: block;
+		}
+
+		.reviewsActive {
+			@apply absolute top-0 left-0 h-full overflow-hidden;
+
+			&::before {
+				content: '★★★★★';
+				@apply absolute top-0 left-0 h-full w-full text-yellow-500;
+			}
+		}
+	}
+	.reviewsValue {
+		@apply pl-3 text-sm text-[#5D5E60];
+		text-decoration:underline;
+	}
+
+	.reviewsArticle {
+		@apply ml-auto text-sm font-semibold text-[#2F2F2F] border-2 border-solid border-[#08A045];
+		border-radius: 5px;
+		padding: 4px 8px;
+	}
+}

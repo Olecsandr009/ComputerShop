@@ -1,0 +1,193 @@
+SHOP
+
+Pages:
+///////////////////////
+() Home +-
+												Search {
+													category
+													name
+												///////////////////////
+													all result
+												///////////////////////
+													history
+													clean history
+												}
+
+												Catalog {
+													category
+													name
+													brand
+												///////////////////////
+													brand logo
+												///////////////////////
+													new products
+													discount
+												///////////////////////
+													banner
+												}
+
+												Navigation {
+													modals
+												}
+
+												Basket info
+
+												Mini Cart Catalog {
+													name
+												}
+
+												Brand Logo Slider {
+													brand logo link
+												}
+
+												Product Day {
+													timer
+												}
+
+												recommended
+												new products
+												discount products
+
+												History look slider
+
+												Posts {
+													all posts
+												}
+
+												Popular reviews slider {
+													product
+													user
+													comment
+												}
+
+												Mini about text
+
+												Form subscriber
+
+												Footer {
+													navigation 
+													links
+													scroll up
+												}
+///////////////////////
+() Catalog or Search result
+												Header
+												Breadcrumbs
+												///////////////////////
+												Filter in sidebar {
+													price setting
+													spoler
+												}
+												///////////////////////
+												Popular categories
+												///////////////////////
+												Product name
+												Sort
+												Filter Setting list
+												Product List
+												Pagination
+												///////////////////////
+												Is look
+
+												Popular reviews slider {
+													product
+													user
+													comment
+												}
+
+												mini Data
+
+												Footer
+
+///////////////////////
+() Auth
+												Log in {
+													email
+													password
+
+													edit password
+												}
+
+												Register {
+													...Data
+
+													banner
+												}
+///////////////////////
+() Cabinet
+() Product Data
+() Feedback
+() Basket
+() Design
+() Comparison
+() Home posts
+() Post
+() Brands
+() Action
+() About
+
+
+
+
+
+
+
+
+USER
+
+PRODUCT
+
+		Product cart or data 
+
+						image[] <-----------------------
+						name <------------------------------
+						article <----------------------------
+						discount <-------------------------
+						price <-------------------------
+						rating <-------------------------
+						color <------------------------------
+						description -- характеристики <--------------
+						guarantee <-------------------------
+						instruction or pdf file data <-------------
+						description -- meny text data <-------------------
+						link looking youtobe <-------------------
+
+						flag <-------------------------
+ 
+						status { <-------------------------
+							IsStock
+							NotStock
+							IsDelivery
+						}
+
+						feedback
+
+						delivery
+
+						brand logo <---------------------
+
+						category <-------------------------
+							image
+
+						subcategory <----------------------
+
+
+BLOG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Errors: 
+
+* При аутентифікації не обновляється user;

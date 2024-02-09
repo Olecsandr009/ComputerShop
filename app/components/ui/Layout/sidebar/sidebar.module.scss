@@ -1,0 +1,13 @@
+.sidebar {
+	@apply flex flex-col p-5 bg-white inline-block w-[324px];
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+	flex: 0 0 auto;
+
+	.sidebarTitle {
+		@apply flex items-center justify-center gap-2 pb-7 text-[#2F2F2F] text-lg font-extrabold;
+
+		svg {
+			@apply font-extrabold;
+		}
+	}
+}

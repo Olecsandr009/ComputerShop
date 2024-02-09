@@ -1,0 +1,51 @@
+.profileUserForm {
+	@apply pt-5 pl-8;
+
+	.profileUserContent {
+		@apply mb-20;
+
+		.profileUserSubTitle {
+			@apply mb-8 max-w-md text-sm text-gray-700;
+		}
+
+		.profileUserData {
+			@apply flex items-center justify-between gap-10;
+
+			.profileUserDataBlock {
+				flex: 0 1 48%;
+
+				.profileUserDataTitle {
+					@apply mb-5 text-sm font-semibold text-gray-800;
+				}
+
+				.profileUserDataInputs {
+					@apply flex items-center justify-between gap-5;
+				}
+
+				.profileUserDataInputsTel {
+					@apply flex items-center gap-1;
+				}
+
+				.profileUserDataRadioButtons {
+					@apply flex items-center gap-5;
+
+					.profileUserDataRadioBtn {
+						@apply mb-5 w-full border bg-gray-50 py-[11px] px-5 text-center text-sm text-gray-700;
+
+						&.active {
+							@apply border-green-500 bg-white;
+						}
+					}
+				}
+
+				.profileUserDataLink {
+					@apply flex items-center gap-1 text-sm text-gray-700 underline hover:no-underline;
+				}
+			}
+		}
+
+		.profileSaveButtons {
+			@apply flex items-center gap-10;
+		}
+	}
+}

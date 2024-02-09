@@ -1,0 +1,14 @@
+.breadCrumbsSection {
+	@apply mb-5;
+
+	.breadCrumbsContainer {
+		@apply flex items-center gap-2;
+	}
+	.breadCrumbsLink {
+		@apply text-sm;
+		color: #5d5e60;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

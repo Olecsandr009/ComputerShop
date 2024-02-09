@@ -1,0 +1,11 @@
+.heroSwiper {
+	@apply mb-7 h-[500px];
+
+	.heroSlide {
+		@apply overflow-hidden h-full w-full;
+
+		img {
+			@apply max-w-full h-full block w-full max-h-full;
+		}
+	}
+}
