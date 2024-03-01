@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { IProduct } from '../../../../../assets/services/interface/product.interface'
 import styles from '../../searchInput.module.scss'
 import Link from 'next/link'
@@ -42,7 +43,7 @@ export function searchProductHandler(products:IProduct[]) {
                                     className={styles.searchResultLinkProduct}
                                 >
                                     <div className={styles.searchResultMedia}>
-                                        <img
+                                        <Image
                                             className={styles.searchResultImage}
                                             src={element.image[0]}
                                             alt='Product'

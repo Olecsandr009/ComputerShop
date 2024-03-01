@@ -49,11 +49,11 @@ const SearchResult:FC<ISearchResult> = ({searchTerm}:ISearchResult) => {
 	const debouncedSearchTerm = useDebounce(searchTerm, 500)
 	
 	useEffect(() => {
-		if(searchTerm.length >= 3) {
-			searchProducts(searchTerm)
-			searchCategories(searchTerm)
+		if(debouncedSearchTerm.length >= 3) {
+			searchProducts(debouncedSearchTerm)
+			searchCategories(debouncedSearchTerm)
 		}
-	}, [debouncedSearchTerm])
+	}, [debouncedSearchTerm, searchCategories, searchProducts])
 
     return (
         <div className={styles.searchHistory}>
