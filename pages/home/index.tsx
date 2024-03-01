@@ -24,7 +24,7 @@ const Home = () => {
 	return (
 		<section>
 			<CatalogContext.Provider value={{ catalogState, catalogHandler }}>
-				<Header />
+				<Header />	
 				<main>
 					<Hero />
 					{/* <CategoryCarts /> */}
