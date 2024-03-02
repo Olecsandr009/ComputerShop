@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChangeEvent, MouseEvent, useEffect, useState } from 'react'
+import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from 'react'
 
 import { useOutside } from '../../../hooks/useOutside'
 import { useTheme } from '../../../hooks/useTheme'
@@ -7,8 +7,9 @@ import ButtonGreen from '../buttons/button-green/ButtonGreen'
 
 import styles from './searchInput.module.scss'
 import SearchHistory from './searchHistory/searchHistory'
-import { addStorageData } from './storage/addStorageData'
+import { addStorageData } from '../../../assets/storage/addStorageData'
 import SearchResult from './searchResult/searchResult'
+import { useRouter } from 'next/router'
 
 const SearchInput = () => {
 	const [inputValueState, setInputValueState] = useState('')
@@ -17,18 +18,35 @@ const SearchInput = () => {
 
 	const { ref, isShow, setIsShow } = useOutside(false)
 
+	const inputRef = useRef<HTMLInputElement>(null)
+
+	const router = useRouter()
+
 	// Дабавляєм в сховище дані
-	function onClickHandler(e: MouseEvent) {
+	function onClickHandler(e:any) {
 		setIsShow(false)
+		addStorageData(inputValueState)
+		setInputValueState("")
+	}
+
+	function onSubmitHandler(e:any) {
+		e.preventDefault()
+		setIsShow(false)
+		inputRef.current?.blur()
 
 		addStorageData(inputValueState)
+
+		router.push(`/products/${inputValueState}`)
+
+		setInputValueState("")
 	}
 
 	return (
 		<>
-			<form action='#' className={styles.searchForm}>
+			<form action='#' onSubmit={onSubmitHandler} className={styles.searchForm}>
 				<label ref={ref} className={styles.searchLabel}>
 					<input
+						ref={inputRef}
 						onFocus={(e) => setIsShow(true)}
 						onChange={(e: ChangeEvent<HTMLInputElement>) =>
 							setInputValueState(e.target.value)

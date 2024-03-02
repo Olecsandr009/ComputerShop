@@ -5,9 +5,9 @@ export function addStorageData(data:string):boolean {
         let searchStorage = getStorageData('searchHistory')
         
         if(!searchStorage) searchStorage = []
-        
-        for(let item in searchStorage) {
-            if(item == data) return true
+
+        for(let i = 0; i < searchStorage.length; i++) {
+            if(searchStorage[i] == data) return true
         }
         
         searchStorage.push(data)

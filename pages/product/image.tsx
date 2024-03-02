@@ -6,21 +6,21 @@ const Image = () => {
 
 	const [url, setUrl] = useState()
 
-	function ChangeHandler(e: any) {
-		const files = Array.from(e.target.files)
+	// function ChangeHandler(e: any) {
+	// 	const files = Array.from(e.target.files)
 
-		files.forEach(file => {
-			const reader = new FileReader()
+	// 	files.forEach(file => {
+	// 		const reader = new FileReader()
 
-			reader.onload = ev => {
-				ev.target ? setUrl(ev.target.result) : undefined
+	// 		reader.onload = ev => {
+	// 			ev.target ? setUrl(ev.target.result) : undefined
 
-				console.log(ev.target?.result)
-			}
+	// 			console.log(ev.target?.result)
+	// 		}
 
-			reader.readAsDataURL(file)
-		})
-	}
+	// 		reader.readAsDataURL(file)
+	// 	})
+	// }
 
 	useEffect(() => {
 		console.log('ddd')
@@ -28,7 +28,7 @@ const Image = () => {
 
 	return (
 		<div>
-			<input onChange={ChangeHandler} type='file' />
+			{/* <input onChange={ChangeHandler} type='file' /> */}
 
 			{url ? <img src={url} /> : <div>Not image</div>}
 		</div>

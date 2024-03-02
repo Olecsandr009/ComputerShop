@@ -3,13 +3,9 @@ export function deleteItemStorage(item:string, storage:string): boolean {
         const json = localStorage[storage]
         const storageData:string[] = JSON.parse(json)
 
-        for(let i = 0; i < storageData.length; i++) {
-            if(storageData[i] == item) {
-                storageData.splice(i)
-            }
-        }
+        storageData.splice(storageData.indexOf(item))
 
-        localStorage[storage] = storageData
+        localStorage[storage] = JSON.stringify(storageData)
         return true
     } catch(e) {
         console.log(e)

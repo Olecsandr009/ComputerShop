@@ -159,7 +159,7 @@ const Admin = () => {
 		getEnumProductStatus()
 		getBrands()
 		getNames()
-	}, [])
+	}, [getCategoriesChild, getSubCategories, getEnumProductFlags, getEnumProductStatus, getBrands, getNames])
 
 	// Set Colors
 	function buttonFunction(e: any) {
@@ -293,7 +293,7 @@ const Admin = () => {
 		<div className={styles.admin}>
 			<form id='admin'>
 				<label>
-					<p>Введіть ім'я товару</p>
+					<p>Введіть ім&apos;я товару</p>
 					<input
 						onChange={e => setProduct({ ...product, model: e.target.value })}
 						className='border-2 border-solid border-black'

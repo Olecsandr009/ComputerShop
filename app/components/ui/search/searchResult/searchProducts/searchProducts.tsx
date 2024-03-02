@@ -2,38 +2,9 @@ import Image from 'next/image'
 import { IProduct } from '../../../../../assets/services/interface/product.interface'
 import styles from '../../searchInput.module.scss'
 import Link from 'next/link'
+import { productPrice } from './productPrice/productPrice'
 
 export function searchProductHandler(products:IProduct[]) {
-
-    function productPrice(product: IProduct) {
-		if (parseInt(product.discount) > 0) {
-			const discountPriceValue = (
-				parseInt(product.price) *
-				(parseInt(product.discount) / 100)
-			)
-				.toString()
-				.split('.')[0]
-			const discountPrice = (
-				parseInt(product.price) - parseInt(discountPriceValue)
-			)
-				.toString()
-				.split('.')[0]
-
-			return (
-				<>
-					<p className={styles.searchResultProductDiscount}>{product.price}</p>
-					<p className={styles.searchResultProductPrice}>{discountPrice}</p>
-				</>
-			)
-		} else {
-			return (
-				<>
-					<p className={styles.searchResultProductPrice}>{product.price}</p>
-				</>
-			)
-		}
-	}
-
     return products
         ? products.map((element, index) => {
                     return (
@@ -43,7 +14,7 @@ export function searchProductHandler(products:IProduct[]) {
                                     className={styles.searchResultLinkProduct}
                                 >
                                     <div className={styles.searchResultMedia}>
-                                        <Image
+                                        <img
                                             className={styles.searchResultImage}
                                             src={element.image[0]}
                                             alt='Product'

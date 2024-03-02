@@ -2,10 +2,10 @@ import { MdOutlineClose } from 'react-icons/md'
 import styles from '../searchInput.module.scss'
 import Link from 'next/link'
 import { BsSearch } from 'react-icons/bs'
-import { clearStorageData } from '../storage/clearStorageData'
-import { getStorageData } from '../storage/getStorageData'
+import { clearStorageData } from '../../../../assets/storage/clearStorageData'
+import { getStorageData } from '../../../../assets/storage/getStorageData'
 import { FC, useEffect, useState } from 'react'
-import { deleteItemStorage } from '../storage/deleteItemStorage'
+import { deleteItemStorage } from '../../../../assets/storage/deleteItemStorage'
 
 const SearchHistory:FC = () => {
 
@@ -17,7 +17,17 @@ const SearchHistory:FC = () => {
 
 	function onDeleteHandler(e: any, element: string) {
 		e.preventDefault()
+		
+		setHistoryState(historyState.filter((el) => el != element))
+
 		deleteItemStorage(element, "searchHistory")
+	}
+
+	function onClearHistoryHandler(e: any) {
+		e.preventDefault()
+
+		clearStorageData("searchHistory")
+		setHistoryState([])
 	}
 
     return (
@@ -46,7 +56,7 @@ const SearchHistory:FC = () => {
 			</ul>
 
 			<button
-				onClick={(e) => clearStorageData("searchHistory")}
+				onClick={onClearHistoryHandler}
 				className={styles.searchHistoryLinkB}
 			>
 				Очистити історію пошуку
