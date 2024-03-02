@@ -25,7 +25,7 @@ const SearchInput = () => {
 	// Дабавляєм в сховище дані
 	function onClickHandler(e:any) {
 		setIsShow(false)
-		addStorageData(inputValueState)
+		addStorageData(inputValueState, "searchHistory")
 		setInputValueState("")
 	}
 
@@ -34,7 +34,7 @@ const SearchInput = () => {
 		setIsShow(false)
 		inputRef.current?.blur()
 
-		addStorageData(inputValueState)
+		addStorageData(inputValueState, "searchHistory")
 
 		router.push(`/products/${inputValueState}`)
 

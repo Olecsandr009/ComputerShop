@@ -1,19 +1,18 @@
 import { getStorageData } from "./getStorageData";
 
-export function addStorageData(data:string):boolean {
+export function addStorageData(data:string, storage:string) {
     try {
-        let searchStorage = getStorageData('searchHistory')
-        
-        if(!searchStorage) searchStorage = []
+        let currentStorage = getStorageData(storage)
 
-        for(let i = 0; i < searchStorage.length; i++) {
-            if(searchStorage[i] == data) return true
+        if(!currentStorage) currentStorage = []
+
+        for(let i = 0; i < currentStorage.length; i++) {
+            if(currentStorage[i] == data) return true
         }
-        
-        searchStorage.push(data)
-        localStorage.searchHistory = JSON.stringify(searchStorage)
+
+        currentStorage.push(data)
+        localStorage[storage] = JSON.stringify(currentStorage)
         return true
-        
     } catch(e) {
         console.log(e)
         return false

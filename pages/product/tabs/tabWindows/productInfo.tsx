@@ -54,7 +54,7 @@ const ProductInfo = () => {
 			? router.query.id[0]
 			: router.query.id || ''
 
-		getProductBySlug(currentURL.split('_').join(' '))
+		getProductBySlug(currentURL)
 	}, [router.query.id])
 
 	useEffect(() => {
